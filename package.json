@@ -1,0 +1,22 @@
+{
+  "name": "stump",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app": "ts-node src/server/index.ts",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "tsup": "^8.0.1",
+    "vitest": "^1.2.1"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.2",
+    "vite": "^5.0.12"
+  }
+}
