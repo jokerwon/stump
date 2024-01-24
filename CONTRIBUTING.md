@@ -27,6 +27,10 @@ $ pnpm i
 
 ```bash
 $ pnpm run dev:cli
+
+$ npm link # 链接到全局
+
+$ stump fixtures/images # 使用 CLI 命令
 ```
 
 ### 开发调试客户端和服务端
