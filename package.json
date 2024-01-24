@@ -1,11 +1,15 @@
 {
   "name": "@jokerwon/stump",
-  "version": "0.0.1-alpha",
+  "version": "0.0.1-alpha-1",
   "description": "",
   "type": "module",
   "bin": {
     "stump": "./bin/stump.js"
   },
+  "files": [
+    "bin",
+    "dist"
+  ],
   "scripts": {
     "dev": "STUMP_MODE=development vite-node src/index.ts",
     "dev:cli": "tsup --watch",
@@ -41,5 +45,9 @@
     "react-dom": "^18.2.0",
     "unocss": "^0.58.3",
     "vite": "^5.0.12"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
