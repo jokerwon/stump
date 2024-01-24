@@ -11,7 +11,7 @@ $ npm install -g @jokerwon/stump
 ## 使用
 
 ```bash
-$ stunp src/assets
+$ stump src/assets
 ```
 
 ## 功能
@@ -19,7 +19,7 @@ $ stunp src/assets
 ### 已实现
 
 - [x] 可视化界面
-- [x] 检索指定目录的 .png 文件
+- [x] 检索指定目录的 `.png` 文件
 
 ### 待实现
 
