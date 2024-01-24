@@ -1,14 +1,15 @@
 import { createServer } from 'vite'
+import react from '@vitejs/plugin-react'
+import UnoCSS from 'unocss/vite'
 
 ;(async () => {
   const server = await createServer({
-    configFile: './src/app/vite.config.ts',
-    root: './src/app',
+    root: './src/client/app',
     server: {
-      port: 1337,
-      proxy: {},
+      port: 9527,
       cors: true,
     },
+    plugins: [react(), UnoCSS()],
   })
   await server.listen()
 
