@@ -1,27 +1,20 @@
-import { createServer } from 'vite'
-import react from '@vitejs/plugin-react'
-import UnoCSS from 'unocss/vite'
+import { resolve } from 'path'
+import { createServer, preview } from 'vite'
 
 export async function startClient(context?: Context) {
   const server = await createServer({
-    // TODO: 修改为客户端存放的地址
-    root: '/Users/jokerwon/workspace/jokerwon/stump/src/client/app',
-    server: {
-      port: 9527,
-      cors: true,
-      fs: {
-        // 允许访问 root 以外的文件
-        strict: false,
-      }
-    },
-    plugins: [react(), UnoCSS()],
+    configFile: resolve('./vite.config.ts'),
   })
   await server.listen()
-
+  // const server = await preview({
+  //   // 任何有效的用户配置项，将加上 `mode` 和 `configFile`
+  //   configFile: resolve('./vite.config.ts'),
+  //   preview: {
+  //     port: 9527,
+  //     cors: true,
+  //     open: true,
+  //   },
+  // })
   server.printUrls()
-  server.bindCLIShortcuts({ print: true })
-
   return server
 }
-
-startClient();

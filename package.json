@@ -7,10 +7,11 @@
     "stump": "./bin/stump.js"
   },
   "scripts": {
-    "client": "vite-node src/client/index.ts",
-    "server": "vite-node src/server/index.ts",
-    "dev": "tsup --watch",
-    "build": "tsup",
+    "dev": "vite-node src/index.ts",
+    "dev:cli": "tsup --watch",
+    "build:cli": "tsup",
+    "build:app": "vite build",
+    "build": "npm run build:cli",
     "test": "vitest"
   },
   "keywords": [],
