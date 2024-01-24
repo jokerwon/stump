@@ -2,12 +2,17 @@ import { createServer } from 'vite'
 import react from '@vitejs/plugin-react'
 import UnoCSS from 'unocss/vite'
 
-;(async () => {
+export async function startClient(context?: Context) {
   const server = await createServer({
-    root: './src/client/app',
+    // TODO: 修改为客户端存放的地址
+    root: '/Users/jokerwon/workspace/jokerwon/stump/src/client/app',
     server: {
       port: 9527,
       cors: true,
+      fs: {
+        // 允许访问 root 以外的文件
+        strict: false,
+      }
     },
     plugins: [react(), UnoCSS()],
   })
@@ -15,4 +20,8 @@ import UnoCSS from 'unocss/vite'
 
   server.printUrls()
   server.bindCLIShortcuts({ print: true })
-})()
+
+  return server
+}
+
+startClient();

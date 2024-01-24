@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import ImageList from './components/ImageList'
 
+import './App.css'
+
 function App() {
   const [images, setImages] = useState([])
 
@@ -13,7 +15,7 @@ function App() {
   }, [])
 
   return (
-    <div className="h-[100vh] flex items-center justify-center">
+    <div className="h-[100vh] p-8">
       <ImageList list={images} />
     </div>
   )
