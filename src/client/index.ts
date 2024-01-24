@@ -1,10 +1,8 @@
-import { resolve } from 'path'
 import { createServer, preview } from 'vite'
+import { getViteConfig } from '../utils'
 
 export async function startClient(context?: Context) {
-  const server = await createServer({
-    configFile: resolve('./vite.config.ts'),
-  })
+  const server = await createServer(getViteConfig())
   await server.listen()
   // const server = await preview({
   //   // 任何有效的用户配置项，将加上 `mode` 和 `configFile`
