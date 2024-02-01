@@ -9,7 +9,7 @@ const app = new Koa()
 app.use(cors)
 
 export function startServer(context: Context) {
-  const { root } = context
+  const { root, serverPort } = context
 
   router.get('/images', async (ctx: any) => {
     const images = await getAllImages(root)
@@ -18,7 +18,7 @@ export function startServer(context: Context) {
 
   app.use(router.routes())
 
-  app.listen(9528, () => {
+  app.listen(serverPort, () => {
     console.log('\nserver is running at http://localhost:9528\n')
   })
 }
