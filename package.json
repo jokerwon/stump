@@ -39,9 +39,11 @@
     "vitest": "^1.2.1"
   },
   "dependencies": {
+    "@iconify-json/carbon": "^1.1.28",
     "@unocss/reset": "^0.58.3",
     "@vitejs/plugin-react": "^4.2.1",
     "cac": "^6.7.14",
+    "classnames": "^2.5.1",
     "fast-glob": "^3.3.2",
     "get-port": "^7.0.0",
     "koa": "^2.15.0",

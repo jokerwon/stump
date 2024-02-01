@@ -1,6 +1,0 @@
-.image_list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(100px,1fr));
-  gap: 36px 40px;
-  margin-top: 20px;
-}

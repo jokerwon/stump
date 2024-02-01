@@ -1,0 +1,68 @@
+/* Scrollbar */
+* {
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scrollbar-width: 6px;
+  scrollbar-color: transparent;
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(128, 128, 128, 0.5);
+  border-radius: 3px;
+}
+
+/* fallback black svg in dark mode */
+.icons-item svg,
+.dark .icons-item [fill='#000'],
+.dark .icons-item [fill='#000000'],
+.dark .icons-item [fill='black'] {
+  fill: currentColor;
+}
+
+.dark .icons-item [stroke='#000'],
+.dark .icons-item [stroke='#000000'],
+.dark .icons-item [stroke='black'] {
+  stroke: currentColor;
+}
+
+.icons-item:hover,
+.icons-item.active {
+  color: var(--theme-color);
+  position: relative;
+}
+.icons-item.active::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 4px;
+  background: var(--theme-color);
+  opacity: 0.1;
+}
+.icons-item:hover::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 4px;
+  border: 1px solid var(--theme-color);
+  opacity: 0.4;
+}

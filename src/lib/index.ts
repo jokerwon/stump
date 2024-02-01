@@ -3,7 +3,7 @@ import { resolve } from 'path'
 
 export async function getAllImages(root: string) {
   if (!root) {
-    throw new Error('required scanning <Dir> but got null.')
+    throw new Error('required scanning directory but got null.')
   }
   let images = []
   try {
@@ -13,12 +13,13 @@ export async function getAllImages(root: string) {
       ignore: ['node_modules'],
     })
   } catch (error) {
-    console.error('getAllImages error, ', error)
+    console.error('error while scanning images, ', error)
   }
   return images.map((img) => ({
     ext: { ...img },
     path: img.path,
     absPath: resolve(root, img.path),
-    name: img.name,
+    name: img.name.split('.')[0],
+    filename: img.name,
   }))
 }
