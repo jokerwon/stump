@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import { presetUno, presetAttributify, presetIcons } from 'unocss'
+import { presetUno, presetIcons } from 'unocss'
 import UnoCSS from 'unocss/vite'
 import { APP_DIR, APP_OUT_DIR, PORT_CLIENT } from './src/constant'
 
@@ -33,17 +33,12 @@ export default defineConfig({
       },
       presets: [
         presetUno(),
-        // @ts-ignore
         presetIcons({
-          collections: {
-            carbon: () => import('@iconify-json/carbon/icons.json').then((i) => i.default),
-          },
           extraProperties: {
             display: 'inline-block',
             'vertical-align': 'middle',
           },
         }),
-        presetAttributify(),
       ],
       theme: {
         colors: {
@@ -65,6 +60,6 @@ export default defineConfig({
     react(),
   ],
   optimizeDeps: {
-    include: ['react-dom/**/*'],
+    include: ['react-dom/**/*', 'classnames'],
   },
 })
