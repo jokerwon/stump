@@ -1,7 +1,7 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import UnoCSS from 'unocss/vite'
-import { resolve } from 'path'
 import { APP_DIR, APP_OUT_DIR } from './src/constant'
 
 const cwd = process.cwd()
@@ -21,4 +21,7 @@ export default defineConfig({
     outDir: resolve(cwd, 'dist/app'),
   },
   plugins: [react(), UnoCSS()],
+  optimizeDeps: {
+    include: ['react-dom/**/*']
+  },
 })

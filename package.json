@@ -1,6 +1,6 @@
 {
   "name": "@jokerwon/stump",
-  "version": "0.0.1-alpha-1",
+  "version": "0.0.1-alpha-6",
   "description": "",
   "type": "module",
   "bin": {
@@ -18,7 +18,11 @@
     "build": "npm run build:cli",
     "test": "vitest"
   },
-  "keywords": [],
+  "keywords": [
+    "stump",
+    "cli",
+    "file manager"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
