@@ -34,6 +34,9 @@ export default defineConfig({
       presets: [
         presetUno(),
         presetIcons({
+          collections: {
+            carbon: () => import('@iconify-json/carbon/icons.json').then((i) => i.default),
+          },
           extraProperties: {
             display: 'inline-block',
             'vertical-align': 'middle',
